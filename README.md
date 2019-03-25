@@ -1,4 +1,4 @@
-![Map](https://user-images.githubusercontent.com/1377758/54843263-5f633800-4caa-11e9-92ed-b801160df6e1.png)
+![Map](https://user-images.githubusercontent.com/1377758/54868569-4454fe80-4d64-11e9-93c2-f4a43574f5ac.png)
 
 # Gatsby + Netlify CMS Starter
 
