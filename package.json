@@ -5,6 +5,8 @@
   "author": "Austin Green",
   "dependencies": {
     "bulma": "^0.7.0",
+    "emotion": "^10.0.9",
+    "emotion-theming": "^10.0.10",
     "gatsby": "^2.2.9",
     "gatsby-image": "^2.0.23",
     "gatsby-plugin-netlify": "^2.0.6",
@@ -28,6 +30,8 @@
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-helmet": "^5.2.0",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
     "uuid": "^3.2.1"
   },
   "keywords": [
@@ -56,6 +60,7 @@
     "@storybook/addon-links": "^5.0.4",
     "@storybook/addons": "^5.0.4",
     "@storybook/react": "^5.0.4",
+    "@storybook/theming": "^5.0.5",
     "babel-loader": "^8.0.5",
     "http-proxy-middleware": "^0.19.1",
     "netlify-lambda": "^1.4.3",
