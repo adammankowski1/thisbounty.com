@@ -1,3 +1,5 @@
+![Map](https://user-images.githubusercontent.com/1377758/54868569-4454fe80-4d64-11e9-93c2-f4a43574f5ac.png)
+
 # Gatsby + Netlify CMS Starter
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b654c94e-08a6-4b79-b443-7837581b1d8d/deploy-status)](https://app.netlify.com/sites/gatsby-starter-netlify-cms-ci/deploys)
