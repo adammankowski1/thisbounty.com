@@ -1,15 +1,17 @@
-import { reducer } from "../table-reducer";
+import { tableReducer } from "../ThisBounty/table-reducer";
 
 const createBounty = ({
+  id = 0,
   name = "",
   description = "",
   funded = false,
-  flags = []
+  tags = []
 } = {}) => ({
+  id,
   name,
   description,
   funded,
-  flags
+  tags
 });
 
 const createState = ({
@@ -20,8 +22,8 @@ const createState = ({
   currentBounty
 });
 
-describe("ThisBounty", () => {
+describe("tableReducer()", () => {
   it("returns default state with no arguments", () => {
-    expect(reducer).toBe(createState());
+    expect(tableReducer()).toEqual(createState());
   });
 });
