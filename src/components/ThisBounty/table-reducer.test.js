@@ -1,4 +1,8 @@
-import { tableReducer, addBounty } from "../ThisBounty/table-reducer";
+import {
+  tableReducer,
+  addBounty,
+  getViewState
+} from "../ThisBounty/table-reducer";
 
 const createBounty = ({
   id = "",
@@ -50,5 +54,12 @@ describe("addBounty()", () => {
     expect(tableReducer(undefined, addBounty(bounty))).toEqual(
       createState({ bountyLog: [bounty] })
     );
+  });
+});
+
+describe("getViewState", () => {
+  it("returns state needed to render ThisBounty table", () => {
+    const state = createState({ bountyLog: [createBounty()] });
+    expect(getViewState(state)).toEqual(state);
   });
 });

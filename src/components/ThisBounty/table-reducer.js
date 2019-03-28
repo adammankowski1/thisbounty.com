@@ -35,3 +35,9 @@ export const addBounty = ({
   type: ADD_BOUNTY,
   payload: { id, name, description, funded, tags, timeStamp }
 });
+
+export const getViewState = state =>
+  Object.assign({}, state, {
+    // place extra formatting of state for component here
+    bountyLog: state.bountyLog
+  });
