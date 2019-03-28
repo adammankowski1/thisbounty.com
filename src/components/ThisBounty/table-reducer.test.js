@@ -30,12 +30,11 @@ describe("tableReducer()", () => {
   });
 });
 
-// As a website visitor, I want to add a bounty, so that I can hire freelancers
-// As a malicious user, I cannot inject code to exploit user browser.
-
 describe("addBounty()", () => {
   it("returns correct state with no arguments", () => {
-    expect(tableReducer(undefined, addBounty())).toEqual(createState());
+    expect(tableReducer(undefined, addBounty())).toEqual(
+      createState({ bountyLog: [createBounty()] })
+    );
   });
 
   it("returns correct state with all arguments", () => {
@@ -49,7 +48,7 @@ describe("addBounty()", () => {
     });
 
     expect(tableReducer(undefined, addBounty(bounty))).toEqual(
-      createState({ currentBounty: bounty })
+      createState({ bountyLog: [bounty] })
     );
   });
 });

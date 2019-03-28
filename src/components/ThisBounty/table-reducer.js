@@ -1,5 +1,3 @@
-import { stat } from "fs";
-
 export const defaultState = {
   bountyLog: [],
   currentBounty: {
@@ -19,7 +17,7 @@ export const tableReducer = (state = defaultState, action = {}) => {
   switch (type) {
     case ADD_BOUNTY:
       return Object.assign({}, state, {
-        currentBounty: payload
+        bountyLog: state.bountyLog.concat(payload)
       });
     default:
       return state;
