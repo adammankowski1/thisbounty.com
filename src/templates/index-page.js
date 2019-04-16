@@ -1,8 +1,34 @@
-import React from "react";
+import React, {forwardRef} from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
+import { FixedSizeList as List } from 'react-window';
 
 import Layout from "../components/Layout";
+
+let columnCount = 0;
+let lastColumnIndex = 0;
+let currentCenter = 0;
+
+const outerElementType = forwardRef((props, ref) => {
+  //console.log(props);
+  columnCount = props.children.props.children.length;
+  lastColumnIndex = parseInt(props.children.props.children[columnCount - 1].key);
+  currentCenter = Math.floor((((lastColumnIndex - columnCount) + lastColumnIndex) / 2));
+  return <div ref={ref} {...props} />
+});
+
+const Column = ({ index, style }) => {
+  //console.log(currentCenter);
+  if(index === currentCenter) {
+    const newStyle = {...style, fontSize: "30px"};
+    return <div style={newStyle}>Column {index}</div>
+  } else if(index > currentCenter) {
+    const newStyle = {...style, left: style.left + 30};
+    return <div style={newStyle}>Column {index}</div>
+  } else
+    return <div style={style}>Column {index}</div>
+  
+};
 
 export const IndexPageTemplate = ({
   image,
@@ -100,6 +126,17 @@ export const IndexPageTemplate = ({
                     </Link>
                   </div>
                 </div>
+                <List
+                  outerElementType={outerElementType}
+                  onWheel={(e) => console.log(e)}
+                  height={75}
+                  itemCount={1000}
+                  itemSize={100}
+                  layout="horizontal"
+                  width={1000}
+                >
+                  {Column}
+                </List>
               </div>
             </div>
           </div>
